@@ -1,8 +1,6 @@
 class Solution:
     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
-        rows, cols = len(matrix), len(matrix[0])
-
-        top, bot = 0, rows - 1
+        top, bot = 0, len(matrix) - 1
 
         while top <= bot:
             mid = (top + bot) // 2
@@ -13,7 +11,10 @@ class Solution:
             else:
                 break
         
-        l, r = 0, cols - 1
+        if not (top <= bot):
+            return False
+            
+        l, r = 0, len(matrix[0]) - 1
         while l <= r:
             m = (l + r) // 2
             if target < matrix[mid][m]:
