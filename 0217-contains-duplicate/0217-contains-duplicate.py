@@ -1,5 +1,13 @@
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
+        """
+        :type nums: List[int]
+        :rtype: bool
+        """
+        # Edge case: if the list is empty or has only one element
+        if len(nums) <= 1:
+            return False
+
         # Create an empty set to store unique elements from the input list
         unique_elements = set()
 
@@ -9,8 +17,7 @@ class Solution:
             if num in unique_elements:
                 return True
             # Otherwise, add the num to the set
-            else:
-                unique_elements.add(num)
+            unique_elements.add(num)
 
         # If the loop completes and we did not return early, there are no duplicate elements
         return False
