@@ -1,15 +1,23 @@
-class Solution:
-    def isAnagram(self, s: str, t: str) -> bool:
+class Solution(object):
+    def isAnagram(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: bool
+        """
+        
+
+
         if len(s) != len(t):
             return False
-        map1 = {}
-        map2 = {}
-
-        for i, j in zip(s, t):
-            map1[i] = map1.get(i, 0) + 1
-            map2[j] = map2.get(j, 0) + 1
         
-        for key in map1:
-            if map1.get(key) != map2.get(key,0):
-                return False
-        return True
+        str1 = {}
+        str2 = {}
+
+        for num in s:
+            str1[num] = str1.get(num, 0) + 1
+        
+        for num in t:
+            str2[num] = str2.get(num, 0) + 1
+        
+        return True if str1 == str2 else False
