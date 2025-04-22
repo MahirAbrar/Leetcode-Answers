@@ -7,7 +7,7 @@ class Solution:
         # Edge case: if the list is empty or has only one element
         if len(nums) <= 1:
             return False
-
+        
         # Create an empty set to store unique elements from the input list
         unique_elements = set()
 
